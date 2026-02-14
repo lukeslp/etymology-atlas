@@ -1,0 +1,35 @@
+{
+  "generated": "2026-01-20T18:31:07.176783",
+  "version": "1.0.0",
+  "counts": {
+    "etymologies": 4173462,
+    "languages": 19401,
+    "cognate_sets": 4981,
+    "phoneme_entries": 105484,
+    "linguistic_features": 76475,
+    "language_families": 0
+  },
+  "etymology_by_type": {
+    "borrowed": 231814,
+    "other": 2162894,
+    "cognate": 790074,
+    "derived": 325776,
+    "inherited": 327261,
+    "abbreviation": 404,
+    "clipping": 2482,
+    "compound": 304470,
+    "blend": 15796,
+    "calque": 10318,
+    "back_formation": 2173
+  },
+  "etymology_by_source": {
+    "etymology-db": 3753162,
+    "lexibank": 420300
+  },
+  "top_language_families": {},
+  "confidence_distribution": {
+    "high (>0.85)": 1992496,
+    "medium (0.5-0.85)": 2180966,
+    "low (<0.5)": 0
+  }
+}

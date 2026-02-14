@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Cache
+.cache/
+cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large data files (available on HuggingFace/Kaggle)
+*.parquet
+csv/
+*.csv
+
+# Temp
+*.tmp
+*.bak

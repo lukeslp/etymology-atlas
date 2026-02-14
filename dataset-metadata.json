@@ -1,0 +1,43 @@
+{
+  "title": "Etymology Atlas: Global Language Relationships",
+  "id": "lucassteuber/etymology-atlas",
+  "subtitle": "4.17M word relationships across 19,400+ languages",
+  "licenses": [
+    {
+      "name": "CC-BY-SA-3.0"
+    }
+  ],
+  "keywords": [
+    "linguistics",
+    "etymology",
+    "historical-linguistics",
+    "cognates",
+    "language-families",
+    "indo-european",
+    "phonology",
+    "typology",
+    "nlp"
+  ],
+  "resources": [
+    {
+      "path": "etymologies.parquet",
+      "description": "4.17M etymological relationships between terms across 19,400+ languages. Core file with relationship types (inherited, borrowed, cognate, etc.), confidence scores, and language metadata."
+    },
+    {
+      "path": "languages.parquet",
+      "description": "19,401 languages from Glottolog: family trees, geographic coordinates, speaker counts, endangerment status."
+    },
+    {
+      "path": "cognate_sets.parquet",
+      "description": "4,981 expert-annotated cognate groups from Lexibank IE-CoR (Indo-European Cognate Relationships benchmark)."
+    },
+    {
+      "path": "phonemes.parquet",
+      "description": "105,484 PHOIBLE 2.0 phoneme entries with articulatory features (manner, place, voice) for 2,177 languages."
+    },
+    {
+      "path": "linguistic_features.parquet",
+      "description": "76,475 WALS typological feature values (word order, tone, case marking, etc.)."
+    }
+  ]
+}
