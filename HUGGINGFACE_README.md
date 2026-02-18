@@ -114,6 +114,12 @@ with open('data.json') as f:
 }
 ```
 
+
+## Distribution
+
+- **GitHub**: [lukeslp/etymology-atlas](https://github.com/lukeslp/etymology-atlas)
+- **Kaggle**: [lucassteuber/etymology-atlas](https://www.kaggle.com/datasets/lucassteuber/etymology-atlas)
+
 ## Author
 
 **Luke Steuber**

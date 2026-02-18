@@ -55,6 +55,12 @@ Data sources are linked by ISO 639-3 codes and Glottocodes, enabling cross-table
 }
 ```
 
+## Distribution
+
+- **GitHub**: [lukeslp/etymology-atlas](https://github.com/lukeslp/etymology-atlas)
+- **Kaggle**: [lucassteuber/etymology-atlas](https://www.kaggle.com/datasets/lucassteuber/etymology-atlas)
+- **HuggingFace**: [lukeslp/etymology-atlas](https://huggingface.co/datasets/lukeslp/etymology-atlas)
+
 ## License
 
 CC BY-SA 3.0
