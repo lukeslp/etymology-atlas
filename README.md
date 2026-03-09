@@ -43,6 +43,26 @@ Data sources are linked by ISO 639-3 codes and Glottocodes, enabling cross-table
 | `phonemes.parquet` | 105,484 | PHOIBLE phoneme data |
 | `linguistic_features.parquet` | 76,475 | WALS typological features |
 
+## Quick Start
+
+```python
+import pandas as pd
+
+# Load the core etymology graph (4.17M word relationships)
+df = pd.read_parquet("etymologies.parquet")
+# Columns: word, language, relation_type, related_word, related_language
+
+# Load language metadata
+langs = pd.read_parquet("languages.parquet")
+# 19,401 languages: ISO codes, coordinates, family, endangerment status
+
+# Find all words related to 'mother' across languages
+mother_cognates = df[df['word'] == 'mother']
+
+# Join with language metadata to add coordinates
+result = mother_cognates.merge(langs[['glottocode','latitude','longitude','family']], on='glottocode')
+```
+
 ## Citation
 
 ```bibtex
@@ -55,6 +75,8 @@ Data sources are linked by ISO 639-3 codes and Glottocodes, enabling cross-table
 }
 ```
 
+**Visualization**: [Language Tree at dr.eamer.dev](https://dr.eamer.dev/datavis/poems/language/tree.html)
+
 ## Distribution
 
 - **GitHub**: [lukeslp/etymology-atlas](https://github.com/lukeslp/etymology-atlas)
@@ -64,3 +86,7 @@ Data sources are linked by ISO 639-3 codes and Glottocodes, enabling cross-table
 ## License
 
 CC BY-SA 3.0
+
+## Author
+
+**Luke Steuber** · [lukesteuber.com](https://lukesteuber.com) · [@lukesteuber.com](https://bsky.app/profile/lukesteuber.com)
