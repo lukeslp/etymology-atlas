@@ -1,5 +1,5 @@
 ---
-license: other
+license: cc-by-sa-3.0
 task_categories:
   - feature-extraction
 language:
@@ -14,30 +14,9 @@ tags:
   - phonology
   - typology
   - nlp
-pretty_name: Etymology Atlas: Global Language Relationships
-size_categories:
-  - n<1K
----
-
-# Etymology Atlas: Global Language Relationships
-
-4.17M word relationships across 19,400+ languages
-
----
-license: cc-by-sa-3.0
-task_categories:
-  - feature-extraction
-tags:
-  - linguistics
-  - etymology
-  - historical-linguistics
-  - cognates
-  - language-families
-  - phonology
-  - typology
-  - nlp
   - glottolog
   - wiktionary
+pretty_name: Etymology Atlas: Global Language Relationships
 size_categories:
   - 1M<n<10M
 ---
@@ -46,13 +25,13 @@ size_categories:
 
 How did the word 'mother' travel from Proto-Indo-European *méh₂tēr to modern languages across four continents? This dataset maps 4.17 million etymological relationships connecting words across 19,401 languages.
 
-The Etymology Atlas integrates five authoritative linguistic sources into a unified graph structure:
+The Etymology Atlas integrates five authoritative linguistic sources into a graph structure:
 
-• **etymology-db**: 3.75 million word relationships extracted from Wiktionary, capturing borrowings, cognates, derivations, and semantic shifts
-• **Glottolog**: Complete catalog of the world's languages with geographic coordinates, family trees, and endangerment status
-• **Lexibank IE-CoR**: 4,981 expert-annotated cognate sets for Indo-European languages—the gold standard for computational historical linguistics
-• **PHOIBLE**: Phoneme inventories for 2,177 languages with articulatory features (manner, place, voicing)
-• **WALS**: 76,475 typological feature values covering word order, tone systems, case marking, and 189 other structural properties
+- **etymology-db**: 3.75 million word relationships extracted from Wiktionary, capturing borrowings, cognates, derivations, and semantic shifts
+- **Glottolog**: Complete catalog of the world's languages with geographic coordinates, family trees, and endangerment status
+- **Lexibank IE-CoR**: 4,981 expert-annotated cognate sets for Indo-European languages, the gold standard for computational historical linguistics
+- **PHOIBLE**: Phoneme inventories for 2,177 languages with articulatory features (manner, place, voicing)
+- **WALS**: 76,475 typological feature values covering word order, tone systems, case marking, and 189 other structural properties
 
 Researchers can trace how words evolved, map language contact zones, analyze sound change patterns, or build phylogenetic models of language families. The Parquet format enables efficient querying of the full graph on a laptop.
 
@@ -68,6 +47,26 @@ Data sources are linked by ISO 639-3 codes and Glottocodes, enabling cross-table
 | `phonemes.parquet` | 105,484 | PHOIBLE phoneme data |
 | `linguistic_features.parquet` | 76,475 | WALS typological features |
 
+## Usage
+
+```python
+import pandas as pd
+
+# Load the core etymology graph (4.17M word relationships)
+df = pd.read_parquet("etymologies.parquet")
+# Columns: word, language, relation_type, related_word, related_language
+
+# Load language metadata
+langs = pd.read_parquet("languages.parquet")
+# 19,401 languages: ISO codes, coordinates, family, endangerment status
+
+# Find all words related to 'mother' across languages
+mother_cognates = df[df['word'] == 'mother']
+
+# Join with language metadata to add coordinates
+result = mother_cognates.merge(langs[['glottocode','latitude','longitude','family']], on='glottocode')
+```
+
 ## Citation
 
 ```bibtex
@@ -80,53 +79,18 @@ Data sources are linked by ISO 639-3 codes and Glottocodes, enabling cross-table
 }
 ```
 
-## License
-
-CC BY-SA 3.0
-
-
-## Dataset Structure
-
-[Check the demo notebook for data exploration examples]
-
-## Usage
-
-```python
-from datasets import load_dataset
-
-# Load the dataset
-dataset = load_dataset("lukeslp/etymology_atlas")
-
-# Or load from local files
-import json
-with open('data.json') as f:
-    data = json.load(f)
-```
-
-## Citation
-
-```bibtex
-@dataset{etymology_atlas_2026,
-  title = {Etymology Atlas: Global Language Relationships},
-  author = {Steuber, Luke},
-  year = {2026},
-  url = {https://huggingface.co/datasets/lukeslp/etymology_atlas}
-}
-```
-
+**Visualization**: [Language Tree at dr.eamer.dev](https://dr.eamer.dev/datavis/poems/language/tree.html)
 
 ## Distribution
 
 - **GitHub**: [lukeslp/etymology-atlas](https://github.com/lukeslp/etymology-atlas)
 - **Kaggle**: [lucassteuber/etymology-atlas](https://www.kaggle.com/datasets/lucassteuber/etymology-atlas)
-
-## Author
-
-**Luke Steuber**
-- Website: [lukesteuber.com](https://lukesteuber.com)
-- Bluesky: [@lukesteuber.com](https://bsky.app/profile/lukesteuber.com)
-- Email: luke@lukesteuber.com
+- **HuggingFace**: [lukeslp/etymology-atlas](https://huggingface.co/datasets/lukeslp/etymology-atlas)
 
 ## License
 
-OTHER
+CC BY-SA 3.0
+
+## Author
+
+**Luke Steuber** · [lukesteuber.com](https://lukesteuber.com) · [@lukesteuber.com](https://bsky.app/profile/lukesteuber.com)
