@@ -16,7 +16,7 @@ tags:
   - nlp
   - glottolog
   - wiktionary
-pretty_name: Etymology Atlas: Global Language Relationships
+pretty_name: "Etymology Atlas: Global Language Relationships"
 size_categories:
   - 1M<n<10M
 ---
