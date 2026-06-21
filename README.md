@@ -1,22 +1,3 @@
----
-license: cc-by-sa-3.0
-task_categories:
-  - feature-extraction
-tags:
-  - linguistics
-  - etymology
-  - historical-linguistics
-  - cognates
-  - language-families
-  - phonology
-  - typology
-  - nlp
-  - glottolog
-  - wiktionary
-size_categories:
-  - 1M<n<10M
----
-
 # Etymology Atlas: Global Language Relationships
 
 How did the word 'mother' travel from Proto-Indo-European *méh₂tēr to modern languages across four continents? This dataset maps 4.17 million etymological relationships connecting words across 19,401 languages.
